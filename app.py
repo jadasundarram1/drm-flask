@@ -5,8 +5,8 @@ from ai import cluster_emails
 import os
 
 credentials = service_account.Credentials.from_service_account_file(
-'/Users/jadasundarram/Desktop/drm-code/directresponsemarketing-8a2f34248a42.json')
-project_id = 'directresponsemarketing'
+'##################')
+project_id = '#################'
 client = bigquery.Client(credentials=credentials, project=project_id)
 
 secret_key = os.urandom(24)
