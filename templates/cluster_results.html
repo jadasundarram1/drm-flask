@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clustered Email Results</title>
+    <!-- Add your CSS styles here if needed -->
+</head>
+<body>
+    <h1>Clustered Email Results</h1>
+    
+    <h2>Category: '{{ category }}'</h2>
+    
+    <div id="results-container">
+        {% if results %}
+            <ul>
+                {% for email in results %}
+                    <li>{{ email }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+    </div>
+
+    <!-- Add any additional content or styling as needed -->
+</body>
+</html>

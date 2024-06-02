@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Results</title>
+</head>
+<body>
+  <h1>Search Results</h1>
+  
+  {% if results %}
+    <table>
+      <tr>
+        <th>isescalated</th>
+        <th>origin</th>
+        <th>contactphone</th>
+        <th>suppliedemail</th>
+        <th>casenumber</th>
+        <th>type</th>
+        <th>description</th>
+        <!-- Add more header fields as needed -->
+      </tr>
+      {% for row in results %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          <td>{{ row[4] }}</td>
+          <td>{{ row[5] }}</td>
+          <td>{{ row[6] }}</td>
+          <!-- Add more fields as needed -->
+        </tr>
+      {% endfor %}
+    </table>
+    <form method="POST" action="/cluster_emails">
+      <input type="hidden" name="category" value="{{ category }}">
+      <button type="submit">Cluster Emails</button>
+  </form>
+  {% else %}
+    <p>No results found.</p>
+  {% endif %}
+</body>
+</html>
